@@ -5,7 +5,7 @@ package main
 import (
 	"syscall/js"
 
-	"github.com/tinywasm/fetch"
+	"webtyp.com/fetch"
 )
 
 func main() {

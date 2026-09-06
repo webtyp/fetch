@@ -1,7 +1,7 @@
 package fetch
 
 import (
-	. "github.com/tinywasm/fmt"
+	. "webtyp.com/fmt"
 )
 
 var defaultBaseURL string

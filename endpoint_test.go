@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/tinywasm/fetch"
+	"webtyp.com/fetch"
 )
 
 type MockUser struct {

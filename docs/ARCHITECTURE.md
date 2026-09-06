@@ -19,7 +19,7 @@ The `Fetch` struct is the central point of the library. It is created once and m
 // fetchgo.go
 package fetchgo
 
-import "github.com/tinywasm/tinybin"
+import "webtyp.com/tinybin"
 
 // Fetch manages HTTP clients with explicit codec methods.
 type Fetch struct {
@@ -202,7 +202,7 @@ The `tinyBinEncoder` works on both platforms without build tags.
 // codecs_shared.go
 package fetchgo
 
-import "github.com/tinywasm/tinybin"
+import "webtyp.com/tinybin"
 
 // tinyBinEncoder encodes data using TinyBin
 type tinyBinEncoder struct {
@@ -323,7 +323,7 @@ client.SendBinary("GET", "https://api.yourapp.com/orders",
 // pkg/crudp/client.go
 package crudp
 
-import "github.com/tinywasm/fetch"
+import "webtyp.com/fetch"
 
 type Client struct {
     http      fetchgo.Client

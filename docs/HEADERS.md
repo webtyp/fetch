@@ -1,6 +1,6 @@
 # HTTP Headers
 
-`tinywasm/fetch` provides easy ways to set request headers and retrieve response headers.
+`webtyp/fetch` provides easy ways to set request headers and retrieve response headers.
 
 ## Request Headers
 

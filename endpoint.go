@@ -1,7 +1,7 @@
 package fetch
 
 import (
-	. "github.com/tinywasm/fmt"
+	. "webtyp.com/fmt"
 )
 
 // EndpointProvider allows structs to define their API endpoint

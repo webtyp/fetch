@@ -1,6 +1,6 @@
 # Base URL and Endpoint Resolution
 
-`tinywasm/fetch` allows you to simplify your requests by using a base URL and providing only the endpoint.
+`webtyp/fetch` allows you to simplify your requests by using a base URL and providing only the endpoint.
 
 ## Priority Resolution
 
@@ -17,7 +17,7 @@ When building the final URL, the following priority is used:
 You can set a global base URL once at the start of your application:
 
 ```go
-import "github.com/tinywasm/fetch"
+import "webtyp.com/fetch"
 
 func check() {
     fetch.SetBaseURL("https://api.example.com")

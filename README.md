@@ -1,4 +1,4 @@
-# tinywasm/fetch
+# webtyp/fetch
 <img src="docs/img/badges.svg">
 
 A minimal, zero-dependency, WASM-compatible HTTP client for Go.
@@ -13,7 +13,7 @@ A minimal, zero-dependency, WASM-compatible HTTP client for Go.
 ## Installation
 
 ```bash
-go get github.com/tinywasm/fetch
+go get webtyp.com/fetch
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ go get github.com/tinywasm/fetch
 package main
 
 import (
-	"github.com/tinywasm/fetch"
+	"webtyp.com/fetch"
 )
 
 func main() {

@@ -1,6 +1,6 @@
 # CORS (Cross-Origin Resource Sharing)
 
-When using `tinywasm/fetch` in a browser environment (WASM), you may encounter CORS errors. It is important to understand that CORS is a **security feature implemented by the browser**, not a limitation of this library.
+When using `webtyp/fetch` in a browser environment (WASM), you may encounter CORS errors. It is important to understand that CORS is a **security feature implemented by the browser**, not a limitation of this library.
 
 ## What is CORS?
 

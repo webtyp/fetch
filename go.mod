@@ -1,5 +1,5 @@
-module github.com/tinywasm/fetch
+module webtyp.com/fetch
 
 go 1.25.2
 
-require github.com/tinywasm/fmt v0.25.7
+require webtyp.com/fmt v0.25.7

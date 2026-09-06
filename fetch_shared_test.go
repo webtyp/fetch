@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tinywasm/fetch"
+	"webtyp.com/fetch"
 )
 
 func SendRequest_GetShared(t *testing.T, baseURL string) {

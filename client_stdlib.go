@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"time"
 
-	. "github.com/tinywasm/fmt"
+	. "webtyp.com/fmt"
 )
 
 // doRequest is the standard library implementation for making an HTTP request.

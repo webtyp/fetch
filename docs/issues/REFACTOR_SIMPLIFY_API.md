@@ -1,11 +1,11 @@
 # Refactor: Simplify Fetch API
 
-Refactor the `tinywasm/fetch` library to create a minimal, JavaScript-style API. Remove all unnecessary constructors and dependencies. The user controls encoding/decoding.
+Refactor the `webtyp/fetch` library to create a minimal, JavaScript-style API. Remove all unnecessary constructors and dependencies. The user controls encoding/decoding.
 
 ## Goals
 
 1. Remove `New()` constructor and `NewClient()` pattern
-2. Remove dependencies on `tinywasm/json` and `tinywasm/gobin`
+2. Remove dependencies on `webtyp/json` and `webtyp/gobin`
 3. Create simple top-level functions: `Get()`, `Post()`, `Put()`, `Delete()`
 4. Add two async send methods: `Send(callback)` and `Dispatch()`
 5. Use `[]Header` slice instead of `map[string]string` (TinyGo compatibility)
@@ -85,7 +85,7 @@ func (r *Response) GetHeader(key string) string
 - `client.go` - Rewrite with `Header`, `Request`, `Response` structs and `Get/Post/Put/Delete` functions
 - `client_wasm.go` - Adapt `doRequest` for `Send()` and `Dispatch()` with `[]Header`
 - `client_stdlib.go` - Adapt `doRequest` for `Send()` and `Dispatch()` with `[]Header`
-- `go.mod` - Remove `tinywasm/json` and `tinywasm/gobin` dependencies
+- `go.mod` - Remove `webtyp/json` and `webtyp/gobin` dependencies
 - `README.md` - Update with new API examples
 - `docs/API.md` - Update API reference
 
@@ -97,8 +97,8 @@ Adapt all existing tests to new API.
 
 ```go
 import (
-    "github.com/tinywasm/fetch"
-    "github.com/tinywasm/json"
+    "webtyp.com/fetch"
+    "webtyp.com/json"
 )
 
 func main() {
@@ -132,7 +132,7 @@ func main() {
 Install the test runner:
 
 ```bash
-go install github.com/tinywasm/devflow/cmd/gotest@latest
+go install webtyp.com/devflow/cmd/gotest@latest
 ```
 
 Run tests:
@@ -182,4 +182,4 @@ This is a complete API rewrite. All existing code using this library must be upd
 - Remove `client := fg.NewClient(...)` pattern
 - Replace `client.SendJSON()` with `fetch.Post().Body(encodedData).Send()`
 - Replace `client.SendBinary()` with `fetch.Post().Body(encodedData).Send()`
-- User must encode/decode data manually using `tinywasm/json` or `tinywasm/binary`
+- User must encode/decode data manually using `webtyp/json` or `webtyp/binary`

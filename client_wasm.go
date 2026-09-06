@@ -5,7 +5,7 @@ package fetch
 import (
 	"syscall/js"
 
-	. "github.com/tinywasm/fmt"
+	. "webtyp.com/fmt"
 )
 
 // doRequest is the WASM implementation for making an HTTP request using the browser's fetch API.
