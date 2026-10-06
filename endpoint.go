@@ -2,6 +2,7 @@ package fetch
 
 import (
 	. "webtyp.com/fmt"
+	"webtyp.com/filepath"
 )
 
 // EndpointProvider allows structs to define their API endpoint
@@ -57,7 +58,7 @@ func joinURLPath(base, path string) string {
 	if path == "" {
 		return base
 	}
-	// Use PathJoin for normalization. PathJoin is designed for file paths but
+	// filepath.Join normalises separators; it is designed for file paths but
 	// since URLs use '/' it works well for simple joins.
-	return PathJoin(base, path).String()
+	return filepath.Join(base, path)
 }
