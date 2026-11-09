@@ -2,6 +2,8 @@
 PLAN: "feat: fetch.Patch — the verb REST uses for a partial update"
 EXECUTOR: antigravity
 REVIEWER: none
+STATUS: running
+SESSION: 16452781565504915696
 ---
 
 > Read AGENTS.md at the repo root before any change.
