@@ -49,6 +49,26 @@ func setupTestServer() *httptest.Server {
 		w.Write(body)
 	})
 
+	mux.HandleFunc("/patch", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPatch {
+			http.Error(w, "bad method", http.StatusMethodNotAllowed)
+			return
+		}
+		b, _ := io.ReadAll(r.Body)
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("patched " + string(b)))
+	})
+
+	mux.HandleFunc("/delete-body", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodDelete {
+			http.Error(w, "bad method", http.StatusMethodNotAllowed)
+			return
+		}
+		b, _ := io.ReadAll(r.Body)
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("deleted " + string(b)))
+	})
+
 	// Handler for PUT requests
 	mux.HandleFunc("/put", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodPut {

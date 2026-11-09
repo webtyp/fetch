@@ -17,6 +17,8 @@ func TestStdlib(t *testing.T) {
 	t.Run("ServerError", func(t *testing.T) { SendRequest_ServerErrorShared(t, server.URL) })
 	t.Run("PostFile", func(t *testing.T) { SendRequest_PostFileShared(t, server.URL) })
 	t.Run("PutDelete", func(t *testing.T) { SendRequest_PutDeleteShared(t, server.URL) })
+	t.Run("Patch", func(t *testing.T) { SendRequest_PatchShared(t, server.URL) })
+	t.Run("DeleteWithBody", func(t *testing.T) { SendRequest_DeleteWithBodyShared(t, server.URL) })
 	t.Run("Headers", func(t *testing.T) { SendRequest_HeadersShared(t, server.URL) })
 	t.Run("ContentTypes", func(t *testing.T) { SendRequest_ContentTypesShared(t, server.URL) })
 	t.Run("Dispatch", func(t *testing.T) { SendRequest_DispatchShared(t, server.URL) })

@@ -5,7 +5,7 @@ A minimal, zero-dependency, WASM-compatible HTTP client for Go.
 
 ## Features
 
-- **Tiny API**: `Get`, `Post`, `Put`, `Delete`
+- **Tiny API**: `Get`, `Post`, `Put`, `Patch`, `Delete`
 - **Declarative Headers**: `ContentTypeJSON()`, `ContentTypeBinary()`, etc.
 - **WASM Compatible**: Works in browsers using `fetch` API and in standard Go
 - **Async Support**: `Send` (callback) and `Dispatch` (fire-and-forget)

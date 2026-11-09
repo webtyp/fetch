@@ -23,8 +23,10 @@ func corsMiddleware(next http.Handler) http.Handler {
     return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
         // Allow the origin of your WASM app
         w.Header().Set("Access-Control-Allow-Origin", "*") // Or your specific domain
-        w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+        w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS")
         w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
+        // Note: PATCH and DELETE from another origin trigger a preflight (OPTIONS) request.
 
         // Handle preflight (OPTIONS) requests
         if r.Method == http.MethodOptions {

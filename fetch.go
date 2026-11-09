@@ -58,6 +58,13 @@ func Put(endpoint any) *Request {
 	return &Request{method: "PUT", endpoint: endpoint}
 }
 
+// Patch creates a new PATCH request: a partial update.
+//
+//	fetch.Patch(url).ContentTypeJSON().Body(body).Send(done)
+func Patch(endpoint any) *Request {
+	return &Request{method: "PATCH", endpoint: endpoint}
+}
+
 // Delete creates a new DELETE request.
 func Delete(endpoint any) *Request {
 	return &Request{method: "DELETE", endpoint: endpoint}

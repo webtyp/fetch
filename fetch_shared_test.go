@@ -159,6 +159,38 @@ func SendRequest_PostFileShared(t *testing.T, baseURL string) {
 	}
 }
 
+func SendRequest_PatchShared(t *testing.T, baseURL string) {
+	done := make(chan bool)
+	var body string
+
+	fetch.Patch(baseURL + "/patch").ContentTypeJSON().Body([]byte(`{"name":"b"}`)).Send(func(resp *fetch.Response, err error) {
+		if err == nil {
+			body = resp.Text()
+		}
+		done <- true
+	})
+	<-done
+	if body != `patched {"name":"b"}` {
+		t.Errorf("Patch failed: %s", body)
+	}
+}
+
+func SendRequest_DeleteWithBodyShared(t *testing.T, baseURL string) {
+	done := make(chan bool)
+	var body string
+
+	fetch.Delete(baseURL + "/delete-body").ContentTypeJSON().Body([]byte(`{"ids":["a"]}`)).Send(func(resp *fetch.Response, err error) {
+		if err == nil {
+			body = resp.Text()
+		}
+		done <- true
+	})
+	<-done
+	if body != `deleted {"ids":["a"]}` {
+		t.Errorf("Delete with body failed: %s", body)
+	}
+}
+
 func SendRequest_PutDeleteShared(t *testing.T, baseURL string) {
 	done := make(chan bool)
 	var body string

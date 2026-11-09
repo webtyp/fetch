@@ -2,8 +2,10 @@
 PLAN: "feat: fetch.Patch — the verb REST uses for a partial update"
 EXECUTOR: antigravity
 REVIEWER: none
-STATUS: running
+STATUS: review
 SESSION: 16452781565504915696
+PR: https://github.com/webtyp/fetch/pull/4
+REVIEWED_COMMIT: 237bb703f3dc1fb0fb720268b6682dea2a12058e
 ---
 
 > Read AGENTS.md at the repo root before any change.

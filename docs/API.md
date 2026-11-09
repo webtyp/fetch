@@ -11,6 +11,9 @@ Creates a new POST request.
 ### `func Put(url string) *Request`
 Creates a new PUT request.
 
+### `func Patch(url string) *Request`
+Creates a new PATCH request: a partial update.
+
 ### `func Delete(url string) *Request`
 Creates a new DELETE request.
 
