@@ -36,7 +36,7 @@ func doRequest(r *Request, callback func(*Response, error)) {
 	options := js.Global().Get("Object").New()
 	options.Set("method", r.method)
 	options.Set("headers", jsHeaders)
-	if !jsBody.IsUndefined() {
+	if !jsBody.IsUndefined() && r.method != "GET" && r.method != "HEAD" {
 		options.Set("body", jsBody)
 	}
 

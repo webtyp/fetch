@@ -17,7 +17,7 @@ import (
 func corsMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
-		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Custom")
 		w.Header().Set("Access-Control-Expose-Headers", "X-Test-Simple, X-Reflected-X-Custom")
 
@@ -64,6 +64,26 @@ func main() {
 		}
 		w.WriteHeader(http.StatusOK)
 		w.Write(body)
+	})
+
+	mux.HandleFunc("/patch", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPatch {
+			http.Error(w, "bad method", http.StatusMethodNotAllowed)
+			return
+		}
+		b, _ := io.ReadAll(r.Body)
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("patched " + string(b)))
+	})
+
+	mux.HandleFunc("/delete-body", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodDelete {
+			http.Error(w, "bad method", http.StatusMethodNotAllowed)
+			return
+		}
+		b, _ := io.ReadAll(r.Body)
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("deleted " + string(b)))
 	})
 
 	// Handler for PUT requests

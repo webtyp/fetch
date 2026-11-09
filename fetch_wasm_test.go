@@ -30,6 +30,8 @@ func TestWasm(t *testing.T) {
 	t.Run("ServerError", func(t *testing.T) { SendRequest_ServerErrorShared(t, serverURL) })
 	t.Run("PostFile", func(t *testing.T) { SendRequest_PostFileShared(t, serverURL) })
 	t.Run("PutDelete", func(t *testing.T) { SendRequest_PutDeleteShared(t, serverURL) })
+	t.Run("Patch", func(t *testing.T) { SendRequest_PatchShared(t, serverURL) })
+	t.Run("DeleteWithBody", func(t *testing.T) { SendRequest_DeleteWithBodyShared(t, serverURL) })
 	t.Run("Headers", func(t *testing.T) { SendRequest_HeadersShared(t, serverURL) })
 	t.Run("ContentTypes", func(t *testing.T) { SendRequest_ContentTypesShared(t, serverURL) })
 	t.Run("Dispatch", func(t *testing.T) { SendRequest_DispatchShared(t, serverURL) })
